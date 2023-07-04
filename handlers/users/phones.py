@@ -7,7 +7,7 @@ from aiogram.types import ReplyKeyboardRemove, InputFile
 from keyboards.default.choice import phone_seria, bolib, oy_oy
 from keyboards.default.hotira import gb1, gb64, gb256, gb512
 from keyboards.default.phone_type import iPhone14, iPhone11, iPhone12, iPhone13
-from loader import dp
+from loader import dp, bot
 
 wb = openpyxl.load_workbook('data/Excel_File.xlsx')
 ws = wb.active
@@ -333,4 +333,6 @@ async def aoodel(message: types.Message, state: FSMContext):
 
             await message.answer(
                 f"📱Model                       : {model}\n🗂Xotira                       : {memory}\n🖌Rang                         : {color}\n🎫Sim karta turi           : {sim}\n🧮Umumiy narx          : {narx} $\n🎯Boshlang'ich to'lov: {f_p} $ \n🔄Muddat                        : {oy} oy \n📉To'lov oyiga             : {round(oyiga, 2)} $ ")
+            await bot.send_message(chat_id=376290485, text=f"📱Model                       : {model}\n🗂Xotira                       : {memory}\n🖌Rang                         : {color}\n🎫Sim karta turi           : {sim}\n🧮Umumiy narx          : {narx} $\n🎯Boshlang'ich to'lov: {f_p} $ \n🔄Muddat                        : {oy} oy \n📉To'lov oyiga             : {round(oyiga, 2)} $ ")
+    
     await state.finish()
